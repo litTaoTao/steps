@@ -1,0 +1,117 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+li {
+	list-style: none;
+}
+
+#content {
+	width: 100%;
+	height: 100%;
+}
+
+#wizard {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.wizard>.steps>ul>li {
+	width: auto;
+	margin: 0 8px;
+}
+
+.wizard>.steps {
+	height: 2.5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: #999 0px 0px 8px;
+}
+
+.wizard>.steps a,
+.wizard>.steps a:hover,
+.wizard>.steps a:active {
+	margin: 0;
+	padding: 0;
+	text-indent: 9999999px;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%;
+}
+
+.wizard>.content {
+	flex: 1;
+	box-sizing: border-box;
+	margin: 0;
+	background: rgba(245, 245, 245, 0.7);
+	min-height: auto;
+}
+
+
+
+/*  */
+section form {
+	width: 90%;
+	margin: 0 auto;
+}
+
+section form ul li {
+	margin-bottom: 5px;
+}
+
+.ui-button {
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	border-radius: 5px;
+	border: 0;
+	background: #fff;
+	height: 2.5em;
+	line-height: 1.7em;
+	box-shadow: #ccc 0px 0px 4px;
+}
+
+.ui-checkboxradio-checked {
+	background: #007fff;
+}
+
+.ui-checkboxradio-radio-label .ui-icon-background {
+	display: none;
+}
+
+.ui-checkboxradio-radio-label {
+	text-align: center;
+}
+
+.wizard>.steps .disabled a,
+.wizard>.steps .disabled a:hover,
+.wizard>.steps .disabled a:active {
+	background: #ccc;
+}
+
+.actions ul li:nth-child(1) {
+	display: none;
+}
+
+.action {
+	text-align: center;
+}
+
+.ques {
+	width: 100%;
+	padding: 1.5em 1em 1em;
+	background: #fff;
+	box-sizing: border-box;
+	margin: 20px 0;
+	border-radius: 10px;
+	box-shadow: #ccc 0px 0px 4px;
+}

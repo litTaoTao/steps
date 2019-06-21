@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/step.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/jqueryui.min.css" />
+		<!-- 修改steps.css -->
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<!-- <link rel="stylesheet" type="text/css" href="css/jqueryui-them.min.css" /> -->
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <script src="js/view.js" type="text/javascript" charset="utf-8"></script> -->
+		<script src="js/step.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jqueryui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+	</head>
+	<body>
+		<div id="content">
+			<div id="wizard">
+				<h2></h2>
+				<section>
+					<form action="">
+						<div class="ques">
+							你的爱好
+						</div>
+						<ul>
+							<li>
+								<label for="radio-1">New York</label>
+								<input type="radio" name="radio-1" id="radio-1">
+							</li>
+							<li>
+								<label for="radio-2">Paris</label>
+								<input type="radio" name="radio-1" id="radio-2">
+							</li>
+							<li>
+								<label for="radio-3">London</label>
+								<input type="radio" name="radio-1" id="radio-3">
+							</li>
+						</ul>
+					</form>
+				</section>
+				<h2></h2>
+				<section>
+					<form action="" method="">
+						<div class="ques">
+							你的爱好
+						</div>
+						<ul>
+							<li>
+								<label for="checkbox-1">2 Star</label>
+								<input type="checkbox" name="checkbox-1" id="checkbox-1">
+							</li>
+							<li>
+								<label for="checkbox-2">3 Star</label>
+								<input type="checkbox" name="checkbox-2" id="checkbox-2">
+							</li>
+							<li>
+								<label for="checkbox-3">4 Star</label>
+								<input type="checkbox" name="checkbox-3" id="checkbox-3">
+							</li>
+							<li>
+								<label for="checkbox-4">5 Star</label>
+								<input type="checkbox" name="checkbox-4" id="checkbox-4">
+							</li>
+						</ul>
+					</form>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	// Initialize wizard
+	$(function() {
+		// 初始化
+		//var vConsole = new VConsole();
+		$("input").checkboxradio();
+	});
+	$("#wizard").steps({
+		headerTag: "h2",
+		bodyTag: "section",
+		transitionEffect: 'slideLeft',
+		iconType: "bullets",
+		labels:{
+			previous:"",
+			finish:"完成",
+			next:"下一步"
+		},
+		onFinished:function(){
+			alert("完成")
+		}
+	});
+	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`)
+</script>
