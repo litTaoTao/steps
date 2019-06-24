@@ -134,12 +134,6 @@
 			next: "下一步",
 			finish: "完成"
 		},
-		onFinished: function() {
-			alert("完成")
-		},
-		onStepChanged: function(event,currentIndex,newIndex) {
-			changeInput(this,currentIndex)
-		},
 		onInit:function(event,currentIndex){
 			changeInput(this,currentIndex);
 		},
@@ -147,9 +141,16 @@
 			if (currentIndex > newIndex) {
 				return true;
 			};
-			var currentId=`#${this.id}-p-${currentIndex}`;
-			if(!$(currentId+" input:checked").length) return false;
-			return true
+			return isAdopt(this,currentIndex);
+		},
+		onStepChanged: function(event,currentIndex,newIndex) {
+			changeInput(this,currentIndex);
+		},
+		onFinishing:function(event,currentIndex){
+			return isAdopt(this,currentIndex);
+		},
+		onFinished: function() {
+			alert("完成")
 		}
 	});
 	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`);
@@ -166,5 +167,11 @@
 				$(".actions li").addClass("disabled");
 			}
 		});
+	};
+	//
+	function isAdopt(that,currentIndex){
+		var currentId=`#${that.id}-p-${currentIndex}`;
+		if(!$(currentId+" input:checked").length) return false;
+		return true
 	}
 </script>
