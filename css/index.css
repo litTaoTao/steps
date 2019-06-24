@@ -26,7 +26,7 @@ li {
 
 .wizard>.steps>ul>li {
 	width: auto;
-	margin: 0 8px;
+	margin: 0 5px;
 }
 
 .wizard>.steps {
@@ -42,7 +42,6 @@ li {
 .wizard>.steps a:active {
 	margin: 0;
 	padding: 0;
-	text-indent: 9999999px;
 	width: 14px;
 	height: 14px;
 	border-radius: 50%;
@@ -96,10 +95,6 @@ section form ul li {
 .wizard>.steps .disabled a:hover,
 .wizard>.steps .disabled a:active {
 	background: #ccc;
-}
-
-.actions ul li:nth-child(1) {
-	display: none;
 }
 
 .wizard>.actions {

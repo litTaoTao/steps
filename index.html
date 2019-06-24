@@ -9,7 +9,7 @@
 		<!-- 修改css -->
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/step.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/step.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jqueryui.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
@@ -128,14 +128,26 @@
 		headerTag: "h2",
 		bodyTag: "section",
 		transitionEffect: 'slideLeft',
+		titleTemplate: '<span class="number"></span> #title#',
 		iconType: "bullets",
-		labels:{
-			previous:"",
-			finish:"完成",
-			next:"下一步"
+		forceMoveForward: true,
+		enablePreviousButton: false, //防止跳转到上一页
+		labels: {
+			next: "下一步",
+			finish: "完成"
 		},
-		onFinished:function(){
+		onFinished: function() {
 			alert("完成")
+		},
+		onStepChanged:function(){
+			
+		},
+		onStepChanging: function(event,newIndex,currentIndex) {
+			if (currentIndex > newIndex) {
+				return true;
+			}
+			// alert("下一页");
+			return !0
 		}
 	});
 	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`)
