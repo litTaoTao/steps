@@ -102,7 +102,7 @@ section form ul li {
 	display: none;
 }
 
-.action {
+.wizard>.actions {
 	text-align: center;
 }
 

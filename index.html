@@ -5,16 +5,12 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 		<link rel="stylesheet" type="text/css" href="css/step.css" />
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
 		<link rel="stylesheet" type="text/css" href="css/jqueryui.min.css" />
-		<!-- 修改steps.css -->
+		<!-- 修改css -->
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<!-- <link rel="stylesheet" type="text/css" href="css/jqueryui-them.min.css" /> -->
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<!-- <script src="js/view.js" type="text/javascript" charset="utf-8"></script> -->
 		<script src="js/step.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jqueryui.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
 	</head>
 	<body>
 		<div id="content">
@@ -67,6 +63,58 @@
 						</ul>
 					</form>
 				</section>
+				<h2></h2>
+				<section>
+					<form action="" method="">
+						<div class="ques">
+							你的爱好
+						</div>
+						<ul>
+							<li>
+								<label for="checkbox-5">5 Star</label>
+								<input type="checkbox" name="checkbox-5" id="checkbox-5">
+							</li>
+							<li>
+								<label for="checkbox-6">6 Star</label>
+								<input type="checkbox" name="checkbox-6" id="checkbox-6">
+							</li>
+							<li>
+								<label for="checkbox-7">7 Star</label>
+								<input type="checkbox" name="checkbox-7" id="checkbox-7">
+							</li>
+							<li>
+								<label for="checkbox-8">8 Star</label>
+								<input type="checkbox" name="checkbox-8" id="checkbox-8">
+							</li>
+						</ul>
+					</form>
+				</section>
+				<h2></h2>
+				<section>
+					<form action="" method="">
+						<div class="ques">
+							你的爱好
+						</div>
+						<ul>
+							<li>
+								<label for="checkbox-9">9 Star</label>
+								<input type="checkbox" name="checkbox-9" id="checkbox-9">
+							</li>
+							<li>
+								<label for="checkbox-10">10 Star</label>
+								<input type="checkbox" name="checkbox-10" id="checkbox-10">
+							</li>
+							<li>
+								<label for="checkbox-11">11 Star</label>
+								<input type="checkbox" name="checkbox-11" id="checkbox-11">
+							</li>
+							<li>
+								<label for="checkbox-12">12 Star</label>
+								<input type="checkbox" name="checkbox-12" id="checkbox-12">
+							</li>
+						</ul>
+					</form>
+				</section>
 			</div>
 		</div>
 	</body>
@@ -74,8 +122,6 @@
 <script type="text/javascript">
 	// Initialize wizard
 	$(function() {
-		// 初始化
-		//var vConsole = new VConsole();
 		$("input").checkboxradio();
 	});
 	$("#wizard").steps({
