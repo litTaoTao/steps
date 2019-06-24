@@ -120,7 +120,6 @@
 	</body>
 </html>
 <script type="text/javascript">
-	// Initialize wizard
 	$(function() {
 		$("input").checkboxradio();
 	});
@@ -130,8 +129,7 @@
 		transitionEffect: 'slideLeft',
 		titleTemplate: '<span class="number"></span> #title#',
 		iconType: "bullets",
-		forceMoveForward: true,
-		enablePreviousButton: false, //防止跳转到上一页
+		forceMoveForward: true,//防止跳转到上一页
 		labels: {
 			next: "下一步",
 			finish: "完成"
@@ -139,16 +137,34 @@
 		onFinished: function() {
 			alert("完成")
 		},
-		onStepChanged:function(){
-			
+		onStepChanged: function(event,currentIndex,newIndex) {
+			changeInput(this,currentIndex)
 		},
-		onStepChanging: function(event,newIndex,currentIndex) {
+		onInit:function(event,currentIndex){
+			changeInput(this,currentIndex);
+		},
+		onStepChanging: function(event, currentIndex, newIndex) {
 			if (currentIndex > newIndex) {
 				return true;
-			}
-			// alert("下一页");
-			return !0
+			};
+			var currentId=`#${this.id}-p-${currentIndex}`;
+			if(!$(currentId+" input:checked").length) return false;
+			return true
 		}
 	});
-	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`)
+	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`);
+	//
+	function changeInput(that,currentIndex){
+		var currentId=`#${that.id}-p-${currentIndex}`;
+		if(!$(currentId+" input:checked").length){
+			$(".actions li").addClass("disabled");
+		}
+		$(currentId+" input").on("change", function() {
+			if($(currentId+" input:checked").length){
+				$(".actions li").removeClass("disabled");
+			}else{
+				$(".actions li").addClass("disabled");
+			}
+		});
+	}
 </script>
