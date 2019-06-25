@@ -123,11 +123,17 @@
 	$(function() {
 		$("input").checkboxradio();
 	});
+	function getDate(){
+		$.ajax({
+			type:"get",
+			url:"data/index.txt"
+		})
+	};
 	$("#wizard").steps({
 		headerTag: "h2",
 		bodyTag: "section",
 		transitionEffect: 'slideLeft',
-		titleTemplate: '<span class="number"></span> #title#',
+		titleTemplate: '<span class="number"></span>#title#',
 		iconType: "bullets",
 		forceMoveForward: true,//防止跳转到上一页
 		labels: {
@@ -147,13 +153,14 @@
 			changeInput(this,currentIndex);
 		},
 		onFinishing:function(event,currentIndex){
+			
 			return isAdopt(this,currentIndex);
 		},
 		onFinished: function() {
 			alert("完成")
 		}
 	});
-	$('.steps ul').prepend(`<li style="line-height:14px;height:14px">调查进度<li>`);
+	$('.steps').prepend(`<div style="line-height:14px;height:14px">调查进度<div>`);
 	//
 	function changeInput(that,currentIndex){
 		var currentId=`#${that.id}-p-${currentIndex}`;
@@ -171,7 +178,7 @@
 	//
 	function isAdopt(that,currentIndex){
 		var currentId=`#${that.id}-p-${currentIndex}`;
-		if(!$(currentId+" input:checked").length) return false;
-		return true
+		if(!$(currentId+" input:checked").length) return !1;
+		return !0
 	}
 </script>

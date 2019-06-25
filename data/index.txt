@@ -1,0 +1,15 @@
+{
+	data:[
+		{
+			type:"checkbox",
+			question:"你的爱好",
+			content:""
+			
+		},
+		{
+			type:"radio",
+			question:"",
+			content:""
+		}
+	]
+}
