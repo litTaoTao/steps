@@ -5,5 +5,35 @@
 		<title></title>
 	</head>
 	<body>
+		<div class="container">
+			<h3 style="text-shadow: 7px 5px 6px blue;;font-size: 32px; line-height: 60px;text-align: center;height: 60px;">健康测评报告</h3>
+			<div class="echart" style="width: 90%;margin: 0 auto;background: #fff;border-radius: 8px;">
+				<div id="container" style="height: 15em;padding-left: 1.5em;box-sizing: border-box;"></div>
+			</div>
+		</div>
 	</body>
 </html>
+<script type="text/javascript">
+	var dom = document.getElementById("container");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+	    xAxis: {
+	        type: 'category',
+	        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+	    },
+	    yAxis: {
+	        type: 'value'
+	    },
+	    series: [{
+	        data: [820, 932, 901, 934, 1290, 1330, 1320],
+	        type: 'line',
+	        smooth: true
+	    }]
+	};
+	;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+</script>

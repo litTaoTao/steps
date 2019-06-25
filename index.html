@@ -2,183 +2,42 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title></title>
+		<title>大数据健康评估</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/step.css" />
 		<link rel="stylesheet" type="text/css" href="css/jqueryui.min.css" />
-		<!-- 修改css -->
-		<link rel="stylesheet" type="text/css" href="css/index.css" />
 		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="js/step.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jqueryui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				background: rgba(245, 245, 245, 0.7);
+			}
+
+			#content {
+				width: 100%;
+				height: 100%;
+			}
+
+			li {
+				list-style: none;
+			}
+		</style>
 	</head>
 	<body>
-		<div id="content">
-			<div id="wizard">
-				<h2></h2>
-				<section>
-					<form action="">
-						<div class="ques">
-							你的爱好
-						</div>
-						<ul>
-							<li>
-								<label for="radio-1">New York</label>
-								<input type="radio" name="radio-1" id="radio-1">
-							</li>
-							<li>
-								<label for="radio-2">Paris</label>
-								<input type="radio" name="radio-1" id="radio-2">
-							</li>
-							<li>
-								<label for="radio-3">London</label>
-								<input type="radio" name="radio-1" id="radio-3">
-							</li>
-						</ul>
-					</form>
-				</section>
-				<h2></h2>
-				<section>
-					<form action="" method="">
-						<div class="ques">
-							你的爱好
-						</div>
-						<ul>
-							<li>
-								<label for="checkbox-1">2 Star</label>
-								<input type="checkbox" name="checkbox-1" id="checkbox-1">
-							</li>
-							<li>
-								<label for="checkbox-2">3 Star</label>
-								<input type="checkbox" name="checkbox-2" id="checkbox-2">
-							</li>
-							<li>
-								<label for="checkbox-3">4 Star</label>
-								<input type="checkbox" name="checkbox-3" id="checkbox-3">
-							</li>
-							<li>
-								<label for="checkbox-4">5 Star</label>
-								<input type="checkbox" name="checkbox-4" id="checkbox-4">
-							</li>
-						</ul>
-					</form>
-				</section>
-				<h2></h2>
-				<section>
-					<form action="" method="">
-						<div class="ques">
-							你的爱好
-						</div>
-						<ul>
-							<li>
-								<label for="checkbox-5">5 Star</label>
-								<input type="checkbox" name="checkbox-5" id="checkbox-5">
-							</li>
-							<li>
-								<label for="checkbox-6">6 Star</label>
-								<input type="checkbox" name="checkbox-6" id="checkbox-6">
-							</li>
-							<li>
-								<label for="checkbox-7">7 Star</label>
-								<input type="checkbox" name="checkbox-7" id="checkbox-7">
-							</li>
-							<li>
-								<label for="checkbox-8">8 Star</label>
-								<input type="checkbox" name="checkbox-8" id="checkbox-8">
-							</li>
-						</ul>
-					</form>
-				</section>
-				<h2></h2>
-				<section>
-					<form action="" method="">
-						<div class="ques">
-							你的爱好
-						</div>
-						<ul>
-							<li>
-								<label for="checkbox-9">9 Star</label>
-								<input type="checkbox" name="checkbox-9" id="checkbox-9">
-							</li>
-							<li>
-								<label for="checkbox-10">10 Star</label>
-								<input type="checkbox" name="checkbox-10" id="checkbox-10">
-							</li>
-							<li>
-								<label for="checkbox-11">11 Star</label>
-								<input type="checkbox" name="checkbox-11" id="checkbox-11">
-							</li>
-							<li>
-								<label for="checkbox-12">12 Star</label>
-								<input type="checkbox" name="checkbox-12" id="checkbox-12">
-							</li>
-						</ul>
-					</form>
-				</section>
-			</div>
-		</div>
+		<div id="content"></div>
 	</body>
 </html>
 <script type="text/javascript">
 	$(function() {
-		$("input").checkboxradio();
+		$('#content').load("./pages/testing.html");
 	});
-	function getDate(){
-		$.ajax({
-			type:"get",
-			url:"data/index.txt"
-		})
-	};
-	$("#wizard").steps({
-		headerTag: "h2",
-		bodyTag: "section",
-		transitionEffect: 'slideLeft',
-		titleTemplate: '<span class="number"></span>#title#',
-		iconType: "bullets",
-		forceMoveForward: true,//防止跳转到上一页
-		labels: {
-			next: "下一步",
-			finish: "完成"
-		},
-		onInit:function(event,currentIndex){
-			changeInput(this,currentIndex);
-		},
-		onStepChanging: function(event, currentIndex, newIndex) {
-			if (currentIndex > newIndex) {
-				return true;
-			};
-			return isAdopt(this,currentIndex);
-		},
-		onStepChanged: function(event,currentIndex,newIndex) {
-			changeInput(this,currentIndex);
-		},
-		onFinishing:function(event,currentIndex){
-			
-			return isAdopt(this,currentIndex);
-		},
-		onFinished: function() {
-			alert("完成")
-		}
-	});
-	$('.steps').prepend(`<div style="line-height:14px;height:14px">调查进度<div>`);
-	//
-	function changeInput(that,currentIndex){
-		var currentId=`#${that.id}-p-${currentIndex}`;
-		if(!$(currentId+" input:checked").length){
-			$(".actions li").addClass("disabled");
-		}
-		$(currentId+" input").on("change", function() {
-			if($(currentId+" input:checked").length){
-				$(".actions li").removeClass("disabled");
-			}else{
-				$(".actions li").addClass("disabled");
-			}
-		});
-	};
-	//
-	function isAdopt(that,currentIndex){
-		var currentId=`#${that.id}-p-${currentIndex}`;
-		if(!$(currentId+" input:checked").length) return !1;
-		return !0
-	}
 </script>
