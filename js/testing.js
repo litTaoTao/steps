@@ -68,7 +68,7 @@ function steps(seletor) {
 			return isAdopt(this, currentIndex);
 		},
 		onFinished: function() {
-			$('#content').load("./pages/assessment.html");
+			location.href='./pages/assessment.html'
 		}
 	});
 }
