@@ -3,40 +3,117 @@
 	<head>
 		<meta charset="utf-8">
 		<title></title>
-		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
-		<link rel="stylesheet" type="text/css" href="../css/assessment.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css" />
+		<link rel="stylesheet" type="text/css" href="../css/step.css" />
+		<link rel="stylesheet" type="text/css" href="../css/assessment.css" />
 		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container">
-			<h3 style="text-shadow: 7px 5px 6px blue;;font-size: 32px; line-height: 60px;text-align: center;height: 60px;">健康测评报告</h3>
-			<div class="echart" style="width: 90%;margin: 0 auto;background: #fff;border-radius: 8px;">
-				<div id="container" style="height: 20em;padding-left: 1.5em;box-sizing: border-box;"></div>
+			<h3>健康测评报告</h3>
+			<div class="echart">
+				<div id="assessment"></div>
+				<div class="risk" style="margin-top: 2em;">
+					<div id="risk"></div>
+					<div class="risk_2">
+						<div>
+							<p><span>32</span><span>实际年龄</span></p>
+							<p><span>38</span><span>风险年龄</span></p>
+						</div>
+						<ul>
+							<li>111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</li>
+							<li>222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222</li>
+					</div>
+				</div>
 			</div>
 		</div>
 	</body>
 </html>
 <script type="text/javascript">
-	var dom = document.getElementById("container");
+	var dom = document.getElementById("assessment");
 	var myChart = echarts.init(dom);
 	var app = {};
 	option = null;
 	option = {
-	    xAxis: {
-	        type: 'category',
-	        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-	    },
-	    yAxis: {
-	        type: 'value'
-	    },
-	    series: [{
-	        data: [820, 932, 901, 934, 1290, 1330, 1320],
-	        type: 'line',
-	        smooth: true
-	    }]
-	};
-	;
+		xAxis: {
+			type: 'category',
+			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		},
+		yAxis: {
+			type: 'value'
+		},
+		series: [{
+			data: [820, 932, 901, 934, 1290, 1330, 1320],
+			type: 'line',
+			smooth: true
+		}]
+	};;
 	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
+		myChart.setOption(option, true);
+	}
+</script>
+<script type="text/javascript">
+	var dom = document.getElementById("risk");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		radar: [{
+			indicator: [{
+					text: '指标一'
+				},
+				{
+					text: '指标二'
+				},
+				{
+					text: '指标三'
+				}
+			],
+			center: ['50%', '50%'],
+			radius: 120,
+			startAngle: 90,
+			splitNumber: 4,
+			shape: 'circle',
+			name: {
+				formatter: '{value}',
+				textStyle: {
+					color: '#72ACD1'
+				}
+			},
+			splitArea: { //层级之间颜色
+                areaStyle: {
+                    color: ['white',
+                    'white',
+                    'white', 'white'],
+                    shadowColor: '0',
+                    shadowBlur: 10
+                }
+            },
+			axisLine: {  //平分线颜色
+				lineStyle: {
+					color: 'red'
+				}
+			},
+			splitLine: { //层级边框颜色
+				lineStyle: {
+					color: 'blue'
+				}
+			}
+		}, ],
+		series: [{
+			name: '雷达图',
+			type: 'radar',
+			data: [{
+				value: [60, 5, 0.30],
+				areaStyle: {
+					normal: {
+						color: 'blue'
+					}
+				}
+			}]
+		}]
+	};
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
 	}
 </script>

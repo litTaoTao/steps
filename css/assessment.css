@@ -2,4 +2,57 @@
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	overflow-y: auto;
+}
+
+.container h3 {
+	/* text-shadow: 7px 5px 6px blue; */
+	font-size: 2.5em;
+	line-height: 3.5em;
+	text-align: center;
+	height: 3.5em;
+}
+
+.echart {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#assessment,.risk{
+	height: 20em;
+	padding-left: 1.5em;
+	box-sizing: border-box;
+	box-shadow: #999 0px 0px 8px;
+	border-radius: 8px;
+	background: #fff;
+}
+.risk{
+	display: flex;
+}
+.risk div{
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+.risk_2{
+	padding: 1.5em;
+}
+.risk_2 p{
+	width: 7em;
+	height: 7em;
+	border-radius: 10px;
+	display: flex;
+	text-align: center;
+	background: #f0f;
+	flex-direction: column;
+	justify-content: center;
+	margin-right: 1em;
+}
+.risk_2>div{
+	flex-direction: initial;
+	justify-content: center;
+}
+.risk_2 ul{
+	word-break:break-all;
+	text-indent: 2em;
 }
