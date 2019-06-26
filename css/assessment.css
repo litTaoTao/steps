@@ -36,6 +36,8 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+	padding-right: 0.5em;
+	justify-content: center;
 }
 
 .risk_2 {
@@ -44,24 +46,37 @@
 }
 
 .risk_2 p {
-	width: 3em;
-	height: 3em;
+	width: 4.5em;
+	height: 4.5em;
 	border-radius: 10px;
+	font-size: 14px;
 	display: flex;
 	text-align: center;
 	background: #f0f;
 	flex-direction: column;
 	justify-content: center;
 	margin-right: 0.5em;
+	box-shadow: #999 0px 0px 8px;
 }
 
 .risk_2>div {
+	flex: 0;
 	flex-direction: initial;
 	justify-content: center;
 }
 
 .risk_2 ul {
 	word-break: break-all;
-	font-size: 14px;
-	/* text-indent: ; */
+	font-size: 12px;
+	text-indent: 2em;
+	line-height: 14px;
+	margin-top: 1em;
+}
+
+.explain ul li{
+	text-indent: 2em;
+	line-height: 1.5em;
+}
+.explain ul li ul li{
+	text-indent: 4em;
 }
