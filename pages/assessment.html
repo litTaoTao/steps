@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/step.css" />
 		<link rel="stylesheet" type="text/css" href="../css/assessment.css" />
 		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -65,6 +66,7 @@
 	}
 </script>
 <script type="text/javascript">
+	var vConsole = new VConsole();
 	var dom = document.getElementById("risk");
 	var myChart = echarts.init(dom);
 	var app = {};
