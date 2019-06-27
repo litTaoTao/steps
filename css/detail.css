@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+#detail {
+	height: 15em;
+	padding-left: 0.5em;
+	box-sizing: border-box;
+	box-shadow: #999 0px 0px 8px;
+	border-radius: 8px;
+	background: #fff;
+}
+
+.container h3 {
+	/* text-shadow: 7px 5px 6px blue; */
+	font-size: 1.5em;
+	line-height: 3em;
+	height: 3em;
+	text-align: center;
+}
+
+.echart {
+	width: 90%;
+	margin: 0 auto;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../css/public.css">
+		<link rel="stylesheet" href="../css/detail.css">
+		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="echart">
+				<h3 class="title"></h3>
+				<div id="detail"></div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+	//参数
+	const getQueryParam = (key) => {
+		const reg = new RegExp('(^|&)' + key + '=([^&]*)(&|$)', 'i');
+		const r = window.location.search.substr(1).split('=')
+		if (r != null) {
+			return decodeURI(r[1]);
+		}
+		return null;
+	};
+	//h3
+	var tit=document.getElementsByClassName('title')[0];
+	tit.innerHTML=getQueryParam();
+	//echart
+	var dom = document.getElementById("detail");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	option = {
+		xAxis: {
+			type: 'category',
+			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		},
+		yAxis: {
+			type: 'value'
+		},
+		series: [{
+			data: [820, 932, 901, 934, 1290, 1330, 1320],
+			type: 'line',
+			smooth: true
+		}]
+	};;
+	if (option && typeof option === "object") {
+		myChart.setOption(option, true);
+	}
+</script>

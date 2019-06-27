@@ -5,10 +5,9 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="../css/public.css" />
-		<link rel="stylesheet" type="text/css" href="../css/step.css" />
 		<link rel="stylesheet" type="text/css" href="../css/assessment.css" />
 		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
-		<script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script>
+		<!-- <script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script> -->
 	</head>
 	<body>
 		<div class="container">
@@ -27,13 +26,13 @@
 							<li>风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄</li>
 					</div>
 				</div>
-				<div class="explain">
+				<div class="explain" style="margin-bottom: 5em;">
 					<ul>
 						<li>风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄</li>
 						<li>主要风险是:
 							<ul>
-								<li>主要风险是【<a href="javascript:;">甲状腺</a>】</li>
-								<li>主要风险是【<a href="javascript:;">甲状腺</a>】</li>
+								<li>主要风险是【<a href="detail.html?name=甲状腺">甲状腺</a>】</li>
+								<li>主要风险是【<a href="detail.html?name=扁桃体">扁桃体</a>】</li>
 							</ul>
 						</li>
 					</ul>
@@ -66,7 +65,7 @@
 	}
 </script>
 <script type="text/javascript">
-	var vConsole = new VConsole();
+	// var vConsole = new VConsole();
 	var dom = document.getElementById("risk");
 	var myChart = echarts.init(dom);
 	var app = {};
