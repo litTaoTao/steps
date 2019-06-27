@@ -7,12 +7,23 @@
 		<link rel="stylesheet" href="../css/public.css">
 		<link rel="stylesheet" href="../css/detail.css">
 		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/setOption.js"></script>
+		<style>
+			.introduce{
+				line-height: 1.6em;
+				text-indent: 2em;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container">
 			<div class="echart">
 				<h3 class="title"></h3>
-				<div id="detail"></div>
+				<div id="detail" style="margin-bottom:20px"></div>
+				<ul class="introduce">
+					<li>扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体</li>
+					<li>扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体扁桃体</li>
+				</ul>
 			</div>
 		</div>
 	</body>
@@ -28,28 +39,25 @@
 		return null;
 	};
 	//h3
-	var tit=document.getElementsByClassName('title')[0];
-	tit.innerHTML=getQueryParam();
+	var tit = document.getElementsByClassName('title')[0];
+	tit.innerHTML = getQueryParam();
 	//echart
-	var dom = document.getElementById("detail");
-	var myChart = echarts.init(dom);
-	var app = {};
-	option = null;
-	option = {
-		xAxis: {
-			type: 'category',
-			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-		},
-		yAxis: {
-			type: 'value'
-		},
-		series: [{
-			data: [820, 932, 901, 934, 1290, 1330, 1320],
-			type: 'line',
-			smooth: true
-		}]
-	};;
-	if (option && typeof option === "object") {
-		myChart.setOption(option, true);
-	}
+	setOption({
+		selector: 'detail',
+		type: 'line',
+		callback:function(myChart){
+			myChart.setOption({
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				series: [{
+					name:'人群平均风险',
+					data: [820, 932, 901, 934, 1290, 1330, 1320],
+					type: 'line',
+					smooth: true
+				}]
+			});
+		}
+	});
 </script>

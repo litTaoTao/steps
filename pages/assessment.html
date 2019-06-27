@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="../css/public.css" />
 		<link rel="stylesheet" type="text/css" href="../css/assessment.css" />
 		<script src="../js/echarts.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/setOption.js"></script>
 		<!-- <script src="https://cdn.bootcss.com/vConsole/3.3.0/vconsole.min.js"></script> -->
 	</head>
 	<body>
@@ -42,91 +43,88 @@
 	</body>
 </html>
 <script type="text/javascript">
-	var dom = document.getElementById("assessment");
-	var myChart = echarts.init(dom);
-	var app = {};
-	option = null;
-	option = {
-		xAxis: {
-			type: 'category',
-			data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-		},
-		yAxis: {
-			type: 'value'
-		},
-		series: [{
-			data: [820, 932, 901, 934, 1290, 1330, 1320],
-			type: 'line',
-			smooth: true
-		}]
-	};;
-	if (option && typeof option === "object") {
-		myChart.setOption(option, true);
-	}
+	setOption({
+		selector: 'assessment',
+		type: 'line',
+		callback:function(myChart){
+			myChart.setOption({
+				xAxis: {
+					type: 'category',
+					data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+				},
+				series: [{
+					name:'人群平均风险',
+					data: [820, 932, 901, 934, 1290, 1330, 1320],
+					type: 'line',
+					smooth: true
+				}]
+			});
+		}
+	});
 </script>
 <script type="text/javascript">
-	// var vConsole = new VConsole();
-	var dom = document.getElementById("risk");
-	var myChart = echarts.init(dom);
-	var app = {};
-	option = null;
-	option = {
-		radar: [{
-			indicator: [{
-					text: '指标一'
-				},
-				{
-					text: '指标二'
-				},
-				{
-					text: '指标三'
-				}
-			],
-			center: ['50%', '50%'],
-			radius: "50%",
-			startAngle: 90,
-			splitNumber: 4,
-			shape: 'circle',
-			name: {
-				formatter: '{value}',
-				textStyle: {
-					color: '#72ACD1'
-				}
-			},
-			splitArea: { //层级之间颜色
-                areaStyle: {
-                    color: ['white',
-                    'white',
-                    'white', 'white'],
-                    shadowColor: '0',
-                    shadowBlur: 10
-                }
-            },
-			axisLine: {  //平分线颜色
-				lineStyle: {
-					color: 'red'
-				}
-			},
-			splitLine: { //层级边框颜色
-				lineStyle: {
-					color: 'blue'
-				}
-			}
-		}, ],
-		series: [{
-			name: '雷达图',
-			type: 'radar',
-			data: [{
-				value: [60, 5, 0.30],
-				areaStyle: {
-					normal: {
-						color: 'blue'
+	setOption({
+		selector: 'risk',
+		type: 'radar',
+		callback:function(myChart){
+			myChart.setOption({
+				radar: [{
+					indicator: [{
+							text: '指标一'
+						},
+						{
+							text: '指标二'
+						},
+						{
+							text: '指标三'
+						}
+					],
+					center: ['50%', '50%'],
+					radius: "50%",
+					startAngle: 90,
+					splitNumber: 4,
+					shape: 'circle',
+					name: {
+						formatter: '{value}',
+						textStyle: {
+							color: '#72ACD1'
+						}
+					},
+					splitArea: { //层级之间颜色
+						areaStyle: {
+							color: ['white',
+							'white',
+							'white', 'white'],
+							shadowColor: '0',
+							shadowBlur: 10
+						}
+					},
+					axisLine: {  //平分线颜色
+						lineStyle: {
+							color: 'red'
+						}
+					},
+					splitLine: { //层级边框颜色
+						lineStyle: {
+							color: 'blue'
+						}
 					}
-				}
-			}]
-		}]
-	};
-	if (option && typeof option === "object") {
-		myChart.setOption(option, true);
-	}
+				}, ],
+				series: [{
+					name: '雷达图',
+					type: 'radar',
+					data: [{
+						value: [60, 5, 0.30],
+						areaStyle: {
+							normal: {
+								color: 'blue'
+							}
+						}
+					}]
+				}]
+			})
+		}
+	})
+	// var vConsole = new VConsole();
+	
 </script>
