@@ -5,10 +5,12 @@
 }
 
 .container h3 {
-	/* text-shadow: 7px 5px 6px blue; */
+	text-shadow: 7px 5px 6px #aaa;
+	font-weight: normal;
 	font-size: 1.5em;
 	line-height: 3em;
 	height: 3em;
+	color: blue;
 	text-align: center;
 }
 
@@ -35,20 +37,18 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	padding-right: 0.5em;
 	justify-content: center;
 }
 
 .risk_2 {
-	padding: 0.5em 0;
-	box-sizing: border-box;
+	padding-left: 0.5em;
 }
 
 .risk_2 p {
 	width: 4.5em;
 	height: 4.5em;
 	border-radius: 10px;
-	font-size: 14px;
+	font-size: 12px;
 	display: flex;
 	text-align: center;
 	background: #f0f;
@@ -66,13 +66,15 @@
 .risk_2 ul {
 	font-size: 12px;
 	text-indent: 2em;
-	line-height: 14px;
+	line-height: 18px;
 	margin-top: 1em;
+	color: #999;
 }
 
 .explain ul li{
 	text-indent: 2em;
-	line-height: 1.5em;
+	line-height: 1.8em;
+	font-size: 12px;
 }
 .explain ul li ul li{
 	text-indent: 4em;

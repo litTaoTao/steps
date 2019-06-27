@@ -23,17 +23,17 @@
 							<p><span>38</span><span>风险年龄</span></p>
 						</div>
 						<ul>
-							<li>实际年龄实际年龄实际年龄实际年龄实际年龄实际年龄实际年龄实际年龄实际年龄</li>
-							<li>风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄</li>
+							<li>当个体绝对风险低于所有危险因素均为正常界值时所得的绝对风险定义为低风险</li>
+							<li>当个体绝对风险高于所有危险因素均为正常界值时所得的绝对风险定义为高风险</li>
 					</div>
 				</div>
 				<div class="explain" style="margin-bottom: 5em;">
 					<ul>
-						<li>风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄风险年龄</li>
+						<li>根据本次问卷评测结果，您未来10年的重大疾病积累风险为76%，是38岁的风险年龄。这一风险相当于同龄人的1.3倍。影响您重大疾病风险的重要因素是恶性肿瘤风险</li>
 						<li>主要风险是:
 							<ul>
-								<li>主要风险是【<a href="detail.html?name=甲状腺">甲状腺</a>】</li>
-								<li>主要风险是【<a href="detail.html?name=扁桃体">扁桃体</a>】</li>
+								<li>甲状腺恶性肿瘤【<a href="detail.html?name=甲状腺恶性肿瘤">查看详情</a>】</li>
+								<li>胃恶性肿瘤【<a href="detail.html?name=胃恶性肿瘤">查看详情</a>】</li>
 							</ul>
 						</li>
 					</ul>
@@ -70,7 +70,8 @@
 			myChart.setOption({
 				radar: [{
 					indicator: [{
-							text: '指标一'
+							text: '指标一',
+							max:'100'
 						},
 						{
 							text: '指标二'
@@ -81,13 +82,14 @@
 					],
 					center: ['50%', '50%'],
 					radius: "50%",
-					startAngle: 90,
-					splitNumber: 4,
+					//startAngle: 180,
+					splitNumber: 5,
 					shape: 'circle',
 					name: {
 						formatter: '{value}',
 						textStyle: {
-							color: '#72ACD1'
+							color: '#72ACD1',
+							fontSize:'10',
 						}
 					},
 					splitArea: { //层级之间颜色
@@ -109,7 +111,7 @@
 							color: 'blue'
 						}
 					}
-				}, ],
+				}],
 				series: [{
 					name: '雷达图',
 					type: 'radar',
