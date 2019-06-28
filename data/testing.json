@@ -2,93 +2,88 @@
 	"data":[
 		{
 			"type":"radio",
-			"question":"你的爱好",
+			"question":"您的亲属（父母，亲兄弟，姐妹）中是否有人在50岁以内患癌症、心脏病、糖尿病？",
 			"content":[
 				{
 					"id":1,
-					"answer":"篮球"
+					"answer":"是"
 				},
 				{
 					"id":2,
-					"answer":"足球"
-				},
-				{
-					"id":3,
-					"answer":"排球"
+					"answer":"否"
 				}
 			]
 		},
 		{
-			"type":"checkbox",
-			"question":"你的爱好",
+			"type":"radio",
+			"question":"请问您每天的运动时间？",
 			"content":[
 				{
 					"id":1,
-					"answer":"篮球"
+					"answer":"15分钟以内"
 				},
 				{
 					"id":2,
-					"answer":"足球"
+					"answer":"15-30分钟"
 				},
 				{
 					"id":3,
-					"answer":"排球"
+					"answer":"30-60分钟"
+				},
+				{
+					"id":4,
+					"answer":"60分钟以上"
 				}
 			]
 			
 		},
 		{
-			"type":"radio",
-			"question":"你的爱好",
-			"content":[
-				{
-					"id":1,
-					"answer":"篮球"
-				},
-				{
-					"id":2,
-					"answer":"足球"
-				},
-				{
-					"id":3,
-					"answer":"排球"
-				}
-			]
-		},
-		{
 			"type":"checkbox",
-			"question":"你的爱好",
+			"question":"请问在过去的半年内，是否因为下拉某类疾病使你感到身体或精神状态不好？（多选题）",
 			"content":[
 				{
 					"id":1,
-					"answer":"篮球"
+					"answer":"高血压"
 				},
 				{
 					"id":2,
-					"answer":"足球"
+					"answer":"糖尿病"
 				},
 				{
 					"id":3,
-					"answer":"排球"
-				}
-			]
-			
-		},
-		{
-			"type":"radio",
-			"question":"你的爱好",
-			"content":[
-				{
-					"id":1,
-					"answer":"篮球"
+					"answer":"心脑血管疾病"
 				},
 				{
-					"id":2,
-					"answer":"足球"
+					"id":4,
+					"answer":"消化系统疾病"
 				},
 				{
-					"id":3,
-					"answer":"排球"
+					"id":5,
+					"answer":"神经系统疾病"
+				},
+				{
+					"id":6,
+					"answer":"内分泌系统疾病"
+				},
+				{
+					"id":7,
+					"answer":"骨、关节疾病"
+				},
+				{
+					"id":8,
+					"answer":"其他"
+				},
+				{
+					"id":9,
+					"answer":"内分泌系统疾病"
+				},
+				{
+					"id":10,
+					"answer":"骨、关节疾病"
+				},
+				{
+					"id":11,
+					"answer":"其他"
 				}
 			]
 		}
